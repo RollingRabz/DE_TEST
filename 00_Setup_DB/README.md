@@ -30,4 +30,34 @@
 
 ## Access postgres
 * There are 2 way to access postgres in this test
-  - 
+  1. Terminal
+ 
+```
+pgcli -h localhost -p 5432 -u root -d data_DB
+```
+
+  2. pgadmin
+
+```
+http://localhost:8080/
+```
+
+## Create table
+
+Query use in create table is in `Create_userinfo.sql`
+
+## Ingest data to database
+
+Using python script
+
+Run this command in terminal(pwd must be in this folder first)
+
+```
+python ingest_data_user.py \
+  --user=root \
+  --password=root \
+  --host=localhost \
+  --port=5432 \
+  --db=data_DB \
+  --table_name=user_info
+```
