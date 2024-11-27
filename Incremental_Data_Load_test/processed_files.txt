@@ -1,0 +1,7 @@
+D:/git/DE_TEST_draft/ref/sales\sales_2024_03_01.csv
+D:/git/DE_TEST_draft/ref/sales\sales_2024_03_02.csv
+D:/git/DE_TEST_draft/ref/sales\sales_2024_03_03.csv
+D:/git/DE_TEST_draft/ref/sales\sales_2024_03_04.csv
+D:/git/DE_TEST_draft/ref/sales\sales_2024_03_05.csv
+D:/git/DE_TEST_draft/ref/sales\sales_2024_03_06.csv
+D:/git/DE_TEST_draft/ref/sales\sales_2024_03_07.csv
