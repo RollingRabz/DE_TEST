@@ -30,13 +30,14 @@
 
 ## Access postgres
 * There are 2 way to access postgres in this test
-  1. Terminal
+  
+1. Terminal
  
 ```
 pgcli -h localhost -p 5432 -u root -d data_DB
 ```
 
-  2. pgadmin
+2. pgadmin(manage the PostgreSQL database using GUI which easier to use than terminal)
 
 ```
 http://localhost:8080/
