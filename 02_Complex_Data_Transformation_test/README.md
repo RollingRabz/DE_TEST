@@ -40,6 +40,17 @@ To store number of transactions and Total sales per product.
 
 ## ETL_1
 
+- Run this command in terminal (pwd must be in this folder)
+
+```
+python ETL_1.py \
+  --user=root \
+  --password=root \
+  --host=localhost \
+  --port=5432 \
+  --db=data_DB 
+```
+
 - Read data from database using library name `sqlalchemy`
 
 ```
@@ -68,6 +79,17 @@ Instead of transform data and load it to database, I will save it to 2 csv files
 
 1. csv file name `transaction_by_loc_gen.csv` contain total, min, max, average transaction amount by user location and gender.
 2. csv file name `top_20_cm_sales.csv` contain top 20 best sell in Chiangmai by day (require field product_id and sales (quantity x amount)).
+
+- Run this command in terminal (pwd must be in this folder)
+
+```
+python ETL_2.py \
+  --user=root \
+  --password=root \
+  --host=localhost \
+  --port=5432 \
+  --db=data_DB 
+```
 
 - Read data from database using library name `sqlalchemy`
 
