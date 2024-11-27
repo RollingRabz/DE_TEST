@@ -22,7 +22,7 @@ The python script will contain
  
 - Ingest data
 
-  - Loop all file in the given directory if that file already processed, it will skipped that file.
+  - Loop all file in the given directory to ingest it to database, if that file already processed it will skipped that file.
 
 Run this command in terminal (pwd must be in this folder)
 
