@@ -1,6 +1,6 @@
 ## Create table
 
-Create table name `transaction` in database name `data_DB` created from `01-setup-database` folder using query in `Create_transaction.sql`
+Create a table named `transaction` in the `data_DB` database, using the query from `Create_transaction.sql` located in the  `01-setup-database` folder.
 
 Data type in `transaction` table
 ```
@@ -16,17 +16,17 @@ CREATE TABLE transaction(
 
 ## Ingest data to table
 The python script will contain
-- Load processed files log if it exists
+- Load the processed files log, if it exists.
 
-  - This file is used to store file name that is already processed. If the file name is in the `processed_files.txt`, that file will be skipped.
+  - This file is used to store the names of files that have already been processed. If a file name is found in `processed_files.txt`, that file will be skipped.
 
-  - If processed files log is not exist, it will create a new one. The first time running this script it will create a new one.
+  - If the processed files log does not exist, a new one will be created. The first time the script is run, it will create a new log file.
  
 - Ingest data
 
-  - Loop all file in the given directory to ingest it to database, if that file already processed it will skipped that file.
+  - Loop through all the files in the given directory to ingest them into the database. If a file has already been processed, it will be skipped.
 
-Run this command in terminal (pwd must be in this folder)
+Run this command in the terminal (make sure the current working directory is this folder first).
 
 ```
 python ingest_data_transaction.py \
