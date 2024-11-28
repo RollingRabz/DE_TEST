@@ -1,5 +1,5 @@
 ## Create table 
-Create 3 tables in existing database name `data_DB` using query in `Create_tables.sql`
+Create three tables in the existing `data_DB` database using the queries in `Create_tables.sql`
 
 Table
 `user_transaction_amount`
@@ -45,7 +45,7 @@ To store number of transactions and Total sales per product.
 
 ## ETL_1
 
-- Run this command in terminal (pwd must be in this folder)
+- Run this command in the terminal (make sure the current working directory is this folder first).
 
 ```
 python ETL_1.py \
@@ -56,7 +56,7 @@ python ETL_1.py \
   --db=data_DB 
 ```
 
-- Read data from database using library name `sqlalchemy`
+- Read data from the database using the `sqlalchemy` library
 
 ```
 from sqlalchemy import create_engine
@@ -66,9 +66,9 @@ query = "SELECT * FROM transaction"
 df = pd.read_sql(query, con=engine)
 ```
 
-This will get data from database using SQL query then perform transform process to get the required data.
+This will retrieve data from the database using an SQL query, then perform a transformation process to extract the required data.
 
-- Write the finished dataframe back to specific table in database
+- Write the finished DataFrame back to a specific table in the database.
 
 ```
 user_transaction.to_sql(name='user_transaction_amount', con=engine, if_exists='append', index=False)
@@ -76,16 +76,16 @@ daily_transaction.to_sql(name='daily_transaction_amount', con=engine, if_exists=
 product_sale.to_sql(name='product_sales', con=engine, if_exists='append', index=False)
 ```
 
-Now the 3 tables we created earlier will have data in it.
+Now, the three tables we created earlier will contain data.
 
 ## ETL_2
 
-Instead of transform data and load it to database, I will save it to 2 csv files which are
+Instead of transforming the data and loading it into the database, I will save it to two CSV files, which are
 
-1. csv file name `transaction_by_loc_gen.csv` contain total, min, max, average transaction amount by user location and gender.
-2. csv file name `top_20_cm_sales.csv` contain top 20 best sell in Chiangmai by day (require field product_id and sales (quantity x amount)).
+1. `transaction_by_loc_gen.csv` contain total, min, max, average transaction amount by user location and gender.
+2. `top_20_cm_sales.csv` contain top 20 best sell in Chiangmai by day (require field product_id and sales (quantity x amount)).
 
-- Run this command in terminal (pwd must be in this folder)
+- Run this command in the terminal (make sure the current working directory is this folder first).
 
 ```
 python ETL_2.py \
@@ -106,11 +106,11 @@ query = "SELECT * FROM user_info JOIN transaction USING(user_id);" # will have o
 df = pd.read_sql(query, con=engine)
 ```
 
-This process get data from database using SQL query by join two tables in database together.
+This process retrieves data from the database using an SQL query by joining two tables together.
 
-After that perform transform process to get required data.
+Next, it performs a transformation process to extract the required data.
 
-- Save the finished dataframes to csv files.
+- Save the final DataFrames to CSV files.
 
 ```
 result_df.to_csv('transaction_by_loc_gen.csv', index=False)
