@@ -5,9 +5,11 @@ Table
 `user_transaction_amount`
 
 ```
-user_id       VARCHAR(256)      PRIMARY KEY
-total_sales   INT               NOT NULL 
-average_sales NUMERIC(1000, 2)  NOT NULL
+CREATE TABLE user_transaction_amount(
+  user_id       VARCHAR(256)      PRIMARY KEY,
+  total_sales   INT               NOT NULL, 
+  average_sales NUMERIC(1000, 2)  NOT NULL
+);
 ```
 
 To store total and average sales (quantity x amount) by user.
@@ -16,13 +18,14 @@ Table
 `daily_transaction_amount`  
 
 ```
-order_date     DATE             PRIMARY KEY
-total_sales    INT              NOT NULL
-min_sales      INT              NOT NULL
-max_sales      INT              NOT NULL
-avg_sales      NUMERIC(1000, 2) NOT NULL
-vat            NUMERIC(1000, 2) NOT NULL
-
+CREATE TABLE daily_transaction_amount(
+  order_date     DATE             PRIMARY KEY,
+  total_sales    INT              NOT NULL,
+  min_sales      INT              NOT NULL,
+  max_sales      INT              NOT NULL,
+  avg_sales      NUMERIC(1000, 2) NOT NULL,
+  vat            NUMERIC(1000, 2) NOT NULL
+);
 ```
 
 To store total, min, max, average sales and VAT(sales x 0.07) by day.
@@ -31,9 +34,11 @@ Table
 `product_sales`
 
 ```
-product_id             VARCHAR(256) PRIMARY KEY
-number_of_transactions INT          NOT NULL
-total_sales            INT          NOT NULL
+CREATE TABLE product_sales(
+  product_id             VARCHAR(256) PRIMARY KEY,
+  number_of_transactions INT          NOT NULL,
+  total_sales            INT          NOT NULL
+);
 ```
 
 To store number of transactions and Total sales per product.
