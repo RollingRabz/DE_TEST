@@ -1,4 +1,4 @@
-## Data Engineer Skill Tests
+## Both the questions and answers for this part are in the `.ipynb` file.
 
 ### Question for data_analysis_test.ipynb
 
