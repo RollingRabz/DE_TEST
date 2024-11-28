@@ -1,15 +1,13 @@
-# In this test I use PostgreSQL as a database
+# In this test I used PostgreSQL as a database
 ## Dockerfile
-* State the necessary library and python version
+* State the required library and the Python version.
 
 ## docker-compose.yaml file
-* State what images I used which are postgres version 13 and pgadmin
-  - Create volumn for Mounts a local directory `./DB_data` to the container's PostgreSQL data directory `/var/lib/postgresql/data` with read-write access `rw`
-
-    to ensures that database data is persisted on the host system, even if the container is stopped or removed.
-  - For postgres I used port 5432 on host machine map to container port 5432(default)
-  - For pgadmin I used port 8080 on host machine map to container port 80(default)
-  - For easy usage, in this test I directly fill in the user and password in .yaml which can be improve by create `.env` file and store user and password in it for more security. Since docker Compose automatically reads `.env` file when running so we can reference it in `.yaml` file.
+* Specify the Docker images I used, which include PostgreSQL version 13 and pgAdmin.
+  - Create a volume to mount the local directory `./DB_data` to the container's PostgreSQL data directory `/var/lib/postgresql/data` with read-write `rw` access. This ensures that database data is persisted on the host system, even if the container is stopped or removed.
+  - For PostgreSQL, I mapped port 5432 on the host machine to the container's default port 5432.
+  - For pgAdmin, I mapped port 8080 on the host machine to the container's default port 80.
+  - For simplicity in this test, I directly specified the username and password in the `.yaml` file. However, this can be improved by creating a `.env` file to store the credentials for better security. Since Docker Compose automatically reads the `.env` file when running, we can reference the variables in the `.yaml` file.
     
   ```
   FROM
@@ -29,7 +27,7 @@
   ```
 
 ## Access postgres
-* There are 2 way to access postgres in this test
+* There are two ways to access PostgreSQL in this test.
   
 1. Terminal
  
@@ -37,7 +35,7 @@
 pgcli -h localhost -p 5432 -u root -d data_DB
 ```
 
-2. pgadmin(manage the PostgreSQL database using GUI which easier to use than terminal)
+2. pgAdmin (a GUI tool for managing the PostgreSQL database, which is easier to use than the terminal).
 
 ```
 http://localhost:8080/
@@ -45,13 +43,13 @@ http://localhost:8080/
 
 ## Create table
 
-Query use in create table is in `Create_userinfo.sql`
+The query used to create the table is in `Create_userinfo.sql`
 
 ## Ingest data to database
 
 Using python script
 
-Run this command in terminal(pwd must be in this folder first)
+Run this command in the terminal (make sure the current working directory is this folder first).
 
 ```
 python ingest_data_user.py \
